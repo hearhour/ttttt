@@ -1,9 +1,16 @@
-[Proxy]
-wireguard-home = wireguard, section-name = HomeServer
+[General] 
+dns-server = system, 8.8.8.8, 8.8.4.4, 9.9.9.9:9953
 
-[WireGuard HomeServer]
-private-key = OEoSV5EOsZoiMlv2gcclOynik/qyFbxM9DUQFALhMnE=
-self-ip = 10.14.0.2
-DNS = 162.252.172.57, 149.154.159.92
-mtu = 1280
-peer = (public-key = OoFY46j/w4uQFyFu/OQ/h3x+ymJ1DJ4UR1fwGNxOxk0=, allowed-ips = 0.0.0.0/0, endpoint = th-bkk.prod.surfshark.com:51820)
+
+
+[Rule]
+udp-policy-not-supported-behaviour = REJECT
+FINAL, REJECT
+
+
+[Proxy] 
+# build in policy 
+On = direct 
+Off = reject 
+ProxyHTTP = http, 54.215.226.218, 8884, hearhour, Hour010888461
+
